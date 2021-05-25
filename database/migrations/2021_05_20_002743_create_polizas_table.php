@@ -16,6 +16,10 @@ class CreatePolizasTable extends Migration
         Schema::create('POLIZAS', function (Blueprint $table) {
             $table->id();
             $table->string('producto');
+            $table->unsignedBigInteger('cliente_id');
+            $table->foreign('cliente_id')->references('id')->on('CLIENTES');
+            $table->unsignedBigInteger('producto_id');
+            $table->foreign('producto_id')->references('id')->on('PRODUCTOS');
             $table->string('numero');
             $table->string('fecha_inicio');
             $table->string('fecha_fin');

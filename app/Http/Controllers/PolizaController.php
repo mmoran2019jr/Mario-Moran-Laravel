@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Poliza;
+use App\Cliente;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 
 class PolizaController extends Controller
 {
     public function getPolizas(){
-        return response()->json(Poliza::all(), 200);
+        //dd(Poliza::with('cliente')->get());
+        return response()->json(Poliza::with('cliente', 'producto')->get(), 200);
     }
 
     public function getPolizaById($id_poliza){

@@ -24,6 +24,12 @@ Route::get('polizas', 'PolizaController@getPolizas');
 //Obtener una poliza en especifico
 Route::get('poliza/{id_poliza}', 'PolizaController@getPolizaById');
 
+//Obtener un cliente especifico
+Route::get('cliente/{id_cliente}', 'ClienteController@getClienteById');
+
+//Obtener un producto especifico
+Route::get('producto/{id_producto}', 'ProductoController@getProductoById');
+
 //Crear una poliza
 Route::post('agregarPoliza', 'PolizaController@agregarPoliza');
 
@@ -35,6 +41,9 @@ Route::delete('eliminarPoliza/{id_poliza}', 'PolizaController@eliminarPoliza');
 
 //Obtener clientes
 Route::get('clientes', 'ClienteController@getClientes');
+
+//Obtener productos
+Route::get('productos', 'ProductoController@getProductos');
 
 //Crear un cliente
 Route::post('agregarCliente', 'PolizaController@agregarPoliza');
